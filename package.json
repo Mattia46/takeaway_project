@@ -1,0 +1,32 @@
+{
+  "name": "TakeAway",
+  "version": "1.0.0",
+  "description": "A MEAN stack takeway app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mattia46/takeaway_project.git"
+  },
+  "keywords": [
+    "MEAN",
+    "takeaway",
+    "Makers Academy"
+  ],
+  "author": "Mattia Assogna, Samuel Overloop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mattia46/takeaway_project/issues"
+  },
+  "homepage": "https://github.com/Mattia46/takeaway_project",
+  "dependencies": {
+    "body-parser": "^1.10.1",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.0.6",
+    "express": "^4.10.7",
+    "express-session": "^1.10.1",
+    "mongoose": "^3.8.21"
+  }
+}
