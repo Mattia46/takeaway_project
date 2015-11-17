@@ -1,6 +1,6 @@
-function TakeAway(menu,order){
+function TakeAway(menu, order){
   this.menu = menu;
-  this.order = order || new Order();
+  this.order = order || new Order(menu);
 }
 
 TakeAway.prototype.jsonMenu = function(){

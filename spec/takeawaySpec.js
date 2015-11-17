@@ -6,7 +6,11 @@ describe ('TakeAway', function(){
   var printedMenu;
 
   beforeEach (function(){
-    menu = {'menu': [{'dish': 'pasta', 'price': 4.99}]};
+    menu = {'dishes': [
+      {'dish': 'pasta', 'price': 4.99},
+      {'dish': 'curry', 'price':5.99 } 
+    ]};
+
     order = { add: function() {}, total: function() {}};
     spyOn(order, 'add');
     spyOn(order, 'total');

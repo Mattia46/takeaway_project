@@ -1,13 +1,17 @@
 describe ('TakeAway features', function(){
 
-    var takeaway;
-    var menu;
-    var order;
+  var takeaway;
+  var menu;
+  var order;
 
-    beforeEach (function(){
-      menu = {'menu': [{'dish': 'pasta', 'price': 4.99}]};
-      takeaway = new TakeAway(menu);
-    });
+  beforeEach (function(){
+    menu = {'dishes': [
+      {'dish': 'pasta', 'price': 4.99},
+      {'dish': 'curry', 'price':5.99 } 
+    ]};
+
+    takeaway = new TakeAway(menu);
+  });
   //as a user
   //so that I can select a dish
   //I want to see the menu
