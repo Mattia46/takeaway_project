@@ -10,7 +10,7 @@ var UserSchema = new Schema({
 	// 	type: String,
 		// trim: true,
 		// unique: true
-	},
+	
 	password: String,
 	// provider: String,
 	// providerId: String,
