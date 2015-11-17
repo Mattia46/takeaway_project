@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/Mattia46/takeaway_project.png?label=ready&title=Ready)](https://waffle.io/Mattia46/takeaway_project)
 MEAN_MVC_3rdTutorial
 ====================
 
