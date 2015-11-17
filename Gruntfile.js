@@ -2,21 +2,23 @@ module.exports = function(grunt){
 
   grunt.initConfig({
     jshint: {
-      all: ['Gruntfile.js', 'app/models/**/*.js', 'spec/**/*.js']
-      },
+      all: ['Gruntfile.js', 'public/js/**/*.js', 'spec/**/*.js']
+    },
 
-      jasmine: {
-        src: 'app/models/**/*.js',
+    jasmine: {
+      src: 'public/js/**/*.js',
+      options: {
         specs: 'spec/*Spec.js',
         helpers: 'spec/*Helper.js',
         display: 'full',
         summary: true
       }
-    });
+    }
+  });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
 
     grunt.registerTask('default', ['jshint', 'jasmine']);
 
-  };
+};
