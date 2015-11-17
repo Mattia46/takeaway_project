@@ -5,14 +5,14 @@ describe ('TakeAway features', function(){
     var order;
 
     beforeEach (function(){
-      menu = {'gnocchi': 4.99, 'polenta': 1.99};
+      menu = {'menu': [{'dish': 'pasta', 'price': 4.99}]};
       takeaway = new TakeAway(menu);
     });
   //as a user
   //so that I can select a dish
   //I want to see the menu
   it('shows the menu', function(){
-    expect(takeaway.show()).toEqual(menu);
+    expect(takeaway.jsonMenu()).toEqual(menu);
   });
 
   // as a user
@@ -21,5 +21,9 @@ describe ('TakeAway features', function(){
   it('can place an order', function(){
     takeaway.placeOrder('gnocchi', 7);
     expect(takeaway.order.dishes).toEqual({'gnocchi': 7});
+  });
+  it('check total cost of order', function() {
+    takeaway.placeOrder('pasta', 7);
+    expect(takeaway.order.total()).toEqual(34.93);
   });
 });
