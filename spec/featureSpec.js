@@ -1,4 +1,4 @@
-describe ('TakeAway', function(){
+describe ('TakeAway features', function(){
 
     var takeaway;
     var menu;
@@ -6,7 +6,6 @@ describe ('TakeAway', function(){
 
     beforeEach (function(){
       menu = {'gnocchi': 4.99, 'polenta': 1.99};
-      order = new Order();
       takeaway = new TakeAway(menu);
     });
   //as a user
@@ -21,6 +20,6 @@ describe ('TakeAway', function(){
   // I want to place an order
   it('can place an order', function(){
     takeaway.placeOrder('gnocchi', 7);
-    expect(order.dishes).toContain({'gnocchi': 7});
+    expect(takeaway.order.dishes).toEqual({'gnocchi': 7});
   });
 });
