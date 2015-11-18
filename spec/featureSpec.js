@@ -5,10 +5,10 @@ describe ('TakeAway features', function(){
   var order;
 
   beforeEach (function(){
-    menu = {'dishes': [
-      {'dish': 'pasta', 'price': 4.99},
-      {'dish': 'curry', 'price':5.99 }
-    ]};
+    menu = {
+            pasta: 4.99,
+            curry: 5.99
+          };
 
     takeaway = new TakeAway(menu);
   });
