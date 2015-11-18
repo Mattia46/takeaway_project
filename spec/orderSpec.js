@@ -22,6 +22,11 @@ describe('Order', function() {
       order.add('curry', 4);
       expect(order.dishes.curry).toEqual(7);
     });
+
+    it('does not allow you to add dishes that are not on the menu', function() {
+      expect(function() { order.add('invalid item', 1);}).toThrow(new Error('Invalid dish'));
+    });
+
   });
 
   describe('#total', function() {
