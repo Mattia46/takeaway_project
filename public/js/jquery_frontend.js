@@ -6,4 +6,11 @@ $( document ).ready(function() {
 
     });
 
+$.getJSON("menu.json", function(res) {
+  // Log each key in the response data
+  $.each(res, function(key,value) {
+    console.log(key + " : " + value);
+  });
+});
+
 });

@@ -1,0 +1,31 @@
+{
+  "name": "takeaway",
+  "description": "A MEAN stack takeway app",
+  "main": "server.js",
+  "authors": [
+    "Mattia Assogna",
+    "Samuel Overloop",
+    "Alaan Rahim",
+    "Ezzye",
+    "Rajeev"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "MEAN",
+    "takeaway",
+    "Makers",
+    "Academy"
+  ],
+  "homepage": "https://github.com/Mattia46/takeaway_project",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
