@@ -9,3 +9,12 @@ var UserSchema = new Schema({
 });
 
 mongoose.model('User', UserSchema);
+
+var MenuSchema = new Schema({
+    name: String,
+    price: Number,
+    ingredients: String,
+    description: String,
+});
+
+mongoose.model('Menu', MenuSchema);
