@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Mattia46/takeaway_project",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "bower": "^1.6.5",
     "connect-flash": "^0.1.1",
     "ejs": "^2.0.6",
     "express": "^4.10.7",
