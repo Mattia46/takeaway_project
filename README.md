@@ -10,3 +10,4 @@ Code acompanying the [third blog post](https://hackhands.com/mongodb-crud-mvc-wa
 [First blog post](https://hackhands.com/how-to-get-started-on-the-mean-stack/) was about getting started on the MEAN stack. 
 
 ![](http://www.nikola-breznjak.com/blog/wp-content/uploads/2014/12/batman.jpg)
+Hello
