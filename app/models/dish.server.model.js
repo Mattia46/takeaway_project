@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var MenuSchema = new Schema({
+var DishSchema = new Schema({
     name: String,
     price: Number,
     ingredients: String,
@@ -9,4 +9,4 @@ var MenuSchema = new Schema({
     picture: String
 });
 
-mongoose.model('Menu', MenuSchema);
+mongoose.model('Dish', MenuSchema);

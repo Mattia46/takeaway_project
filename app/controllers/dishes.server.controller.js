@@ -1,24 +1,24 @@
-var Menu = require('mongoose').model('Menu');
+var Dish = require('mongoose').model('Dish');
 
 exports.create = function(req, res, next) {
-    var menu = new Menu(req.body);
-    menu.save(function(err) {
+    var dish = new Dish(req.body);
+    dish.save(function(err) {
         if (err) {
             return next(err);
         }
         else {
-            res.json(menu);
+            res.json(dish);
         }
     });
 };
 
 exports.list = function(req, res, next) {
-    Menu.find({}, function(err, menu) {
+    Dish.find({}, function(err, dish) {
         if (err) {
             return next(err);
         }
         else {
-            res.json(menu);
+            res.json(dish);
         }
     });
 };
