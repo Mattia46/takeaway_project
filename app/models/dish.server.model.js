@@ -9,4 +9,4 @@ var DishSchema = new Schema({
     picture: String
 });
 
-mongoose.model('Dish', MenuSchema);
+mongoose.model('Dish', DishSchema);
