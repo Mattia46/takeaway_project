@@ -8,7 +8,7 @@ describe ('TakeAway', function(){
   beforeEach (function(){
     menu = {'dishes': [
       {'dish': 'pasta', 'price': 4.99},
-      {'dish': 'curry', 'price':5.99 } 
+      {'dish': 'curry', 'price':5.99 }
     ]};
 
     order = { add: function() {}, total: function() {}};

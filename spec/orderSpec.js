@@ -5,7 +5,7 @@ describe('Order', function() {
   beforeEach(function() {
     menu = {'dishes': [
       {'dish': 'pasta', 'price': 4.99},
-      {'dish': 'curry', 'price':5.99 } 
+      {'dish': 'curry', 'price':5.99 }
     ]};
 
     order = new Order(menu);
