@@ -1,24 +1,24 @@
-var User = require('mongoose').model('User');
+var Menu = require('mongoose').model('Menu');
 
 exports.create = function(req, res, next) {
-    var user = new User(req.body);
-    user.save(function(err) {
+    var menu = new Menu(req.body);
+    menu.save(function(err) {
         if (err) {
             return next(err);
         }
         else {
-            res.json(user);
+            res.json(menu);
         }
     });
 };
 
 exports.list = function(req, res, next) {
-    User.find({}, function(err, users) {
+    Menu.find({}, function(err, menu) {
         if (err) {
             return next(err);
         }
         else {
-            res.json(users);
+            res.json(menu);
         }
     });
 };
