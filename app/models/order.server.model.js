@@ -2,9 +2,12 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var OrderSchema = new Schema ({
-  dishes: [ {type: mongoose.Schema.Types.ObjectId, ref: 'Dish'}, {"quantity": Number} ],
-  user: [ { type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
-
+  username: {type: String, required: true },
+  item: {
+    dish: {type: String, required: true },
+    quantity: {type: Number, required: true },
+    created_at: {type: Date, default: Date.now }
+  }
 });
 
 mongoose.model('Order', OrderSchema);
