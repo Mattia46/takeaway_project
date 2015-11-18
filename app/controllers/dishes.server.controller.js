@@ -1,24 +1,24 @@
-var User = require('mongoose').model('User');
+var Dish = require('mongoose').model('Dish');
 
 exports.create = function(req, res, next) {
-    var user = new User(req.body);
-    user.save(function(err) {
+    var dish = new Dish(req.body);
+    dish.save(function(err) {
         if (err) {
             return next(err);
         }
         else {
-            res.json(user);
+            res.json(dish);
         }
     });
 };
 
 exports.list = function(req, res, next) {
-    User.find({}, function(err, users) {
+    Dish.find({}, function(err, dish) {
         if (err) {
             return next(err);
         }
         else {
-            res.json(users);
+            res.json(dish);
         }
     });
 };
