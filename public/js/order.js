@@ -7,8 +7,11 @@ Order.prototype.add = function(dish, qty) {
   var order = this.dishes;
 
   if (this.isInMenu(dish)) {
-      if(order[dish]) { order[dish] += qty; }
-      else { order[dish] = qty; }
+      if (order[dish]) {
+        order[dish] += qty;
+      } else {
+        order[dish] = qty;
+      }
   } else {
       throw new Error('Invalid dish');
   }
@@ -17,27 +20,22 @@ Order.prototype.add = function(dish, qty) {
 Order.prototype.total = function() {
   var total = 0;
   var order = this.dishes;
-  var arrayOfDishes = this.menu.dishes;
-  var orderItems = Object.keys(order);
+  var menu = this.menu;
 
-  orderItems.forEach(function(orderItem){
-    for(var menuItem in arrayOfDishes) {
-      if(arrayOfDishes[menuItem].dish == orderItem)
-      {
-        total += arrayOfDishes[menuItem].price * order[orderItem] ;
-      }
-    }
+
+  Object.keys(order).forEach( function(key) {
+    total += menu[key] * order[key];
   });
 
   return total;
 };
 
 Order.prototype.isInMenu = function(dish) {
-  var arrayOfDishes = this.menu.dishes;
-  for(var menuItem in arrayOfDishes) {
-    if(arrayOfDishes[menuItem].dish === dish) {
+  var basket = this.menu;
+  for(var menuItem in basket) {
+    if(menuItem === dish) {
       return true;
     }
   }
-      return false;
+  return false;
 };
