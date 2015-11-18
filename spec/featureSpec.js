@@ -7,7 +7,7 @@ describe ('TakeAway features', function(){
   beforeEach (function(){
     menu = {'dishes': [
       {'dish': 'pasta', 'price': 4.99},
-      {'dish': 'curry', 'price':5.99 } 
+      {'dish': 'curry', 'price':5.99 }
     ]};
 
     takeaway = new TakeAway(menu);
@@ -23,8 +23,8 @@ describe ('TakeAway features', function(){
   // so that I can get a wonderful dish
   // I want to place an order
   it('can place an order', function(){
-    takeaway.placeOrder('gnocchi', 7);
-    expect(takeaway.order.dishes).toEqual({'gnocchi': 7});
+    takeaway.placeOrder('pasta', 7);
+    expect(takeaway.order.dishes).toEqual({'pasta': 7});
   });
   it('check total cost of order', function() {
     takeaway.placeOrder('pasta', 7);
