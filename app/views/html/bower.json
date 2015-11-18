@@ -1,0 +1,21 @@
+{
+  "name": "takeaway",
+  "homepage": "https://github.com/Mattia46/takeaway_project",
+  "authors": [
+    "Ezzy Elliott <ezzy.elliott@gmail.com>"
+  ],
+  "description": "Javascript Takeaway Challenge",
+  "main": "app",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
