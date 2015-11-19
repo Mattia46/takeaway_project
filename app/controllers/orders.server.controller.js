@@ -3,11 +3,11 @@
   exports.create = function(req, res, next) {
     var order = new Order(req.body);
     order.save(function(err) {
-      if (err) {
-        return next(err);
+    if (err) {
+      return next(err);
       }
       else {
-        res.json(order);
+      res.json(order);
       }
     });
   };
