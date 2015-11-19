@@ -15,7 +15,8 @@ $( document ).ready(function() {
     });
 
     writeMenu(menu);
-    addOrder();            
+    addOrder();
+    placeOrder();
   });
 
   function addOrder() {
@@ -33,15 +34,42 @@ $( document ).ready(function() {
         string += "<li>" + name + " x" + qty + "</li>";
       });
       string += "</ul><p>TOTAL: " + order.total().toFixed(2);
-      string += "<button>Place Order</button>";
+      string += "<button id='order'>Place Order</button>";
       return string;
     });
+  }
+
+  function placeOrder() {
+    console.log(order);
+    var data = {
+      username: "Username",
+      items: order.dishes
+    };
+    $("#order").click(function(event) {
+      if (loggedIn()) {
+        $.ajax({url: '/orders',
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                $('#order').html("Order successful");
+                },
+                data: data
+                // data: {"username":"Rajeev","items":{"pasta":[4,4.99],"curry":[3,5.99]}}
+        });
+      } else {
+        alert("Please Log In");
+      }
+    });
+  }
+
+  function loggedIn() {
+    return true;
   }
 
   function writeMenu(menu) {
     $('#menu').append('<ul id="listmenu"></ul>');
     for(var dish in menu ) {
-      $('#listmenu').append("<li><button id='" + dish + "'>+</button> " + 
+      $('#listmenu').append("<li><button id='" + dish + "'>+</button> " +
                              dish +": £" + menu[dish] + "</li> ");
     }
   }
