@@ -5,8 +5,9 @@
     <title><%= title %></title>
 </head>
   <body>
-  <h1><%= title %></h1>
     <div id="top">
+      <header class="header-cont">
+        <h1> Takeaway </h1>
       <header>
         Takeaway
         <% if ( user ) { %>
@@ -17,6 +18,10 @@
             <a href="/login">Login</a>
         <% } %>
       </header>
+      <div class="styles">
+      <main>
+        <h1><%= title %></h1>
+
       <div id="other">
         <div id="logo">
           <img src='/img/logo.jpeg' width=40 height=40>
@@ -27,18 +32,23 @@
         </div>
       </div>
 
-    </div>
-
     <div id="container">
       <div id="menu">
-        <!--Menu will appear here-->
+        <h2> Menu </h2>
       </div>
 
       <div id="order_container">
       <ul id="listorder">
+        <h2> Basket </h2>
       </ul>
       </div>
     </div>
+
+  </div>
+  </main>
+  <footer>
+    <p> Makers Academy Takeaway Project </p>
+  </footer>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery_frontend.js"></script>
     <script src="js/order.js"></script>
