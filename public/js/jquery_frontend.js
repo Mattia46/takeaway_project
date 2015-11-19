@@ -26,10 +26,12 @@ $( document ).ready(function() {
     $("#listmenu button").click(function(event) {
       order.add(this.id,1);
       $('#listorder').html(function() {
-        var string = '';
+        var string = '<ul>';
         Object.keys(order.dishes).forEach(function(dish) {
           string += "<li>" + dish + " x" + order.dishes[dish] + "</li>";
         });
+        string += "</ul><p>TOTAL: " + order.total().toFixed(2);
+        string += "<button>Place Order</button>";
         return string;
       });
       console.log(order.dishes);
