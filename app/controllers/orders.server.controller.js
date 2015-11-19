@@ -1,4 +1,4 @@
-var Order = require('mongoose').model('Order');
+ Order = require('mongoose').model('Order');
 
   exports.create = function(req, res, next) {
     var order = new Order(req.body);

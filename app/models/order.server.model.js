@@ -3,11 +3,8 @@ var mongoose = require('mongoose'),
 
 var OrderSchema = new Schema ({
   username: {type: String, required: true },
-  item: {
-    dish: {type: String, required: true },
-    quantity: {type: Number, required: true },
-    created_at: {type: Date, default: Date.now }
-  }
+  items: {},
+  created_at: {type: Date, default: Date.now}
 });
 
 mongoose.model('Order', OrderSchema);
