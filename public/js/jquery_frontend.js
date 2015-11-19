@@ -17,7 +17,6 @@ $( document ).ready(function() {
     writeMenu(menu);
     addOrder();
     placeOrder();
-    console.log(order.dishes);
   });
 
   function addOrder() {
@@ -29,32 +28,31 @@ $( document ).ready(function() {
   }
 
   function writeOrder() {
-    $('#listorder').html(function() {
-      var string = '<ul>';
+    $('p#basket').text('');
+    $('ul#listorder').html(function() {
+      var string = '';
       $.each(order.dishes, function(name, qty) {
         string += "<li>" + name + " x" + qty + "</li>";
       });
-      string += "</ul><p>TOTAL: " + order.total().toFixed(2);
+      string += "<p>TOTAL: " + order.total().toFixed(2);
       string += "<button>Place Order</button>";
       return string;
     });
   }
 
   function placeOrder() {
-    console.log(order.dishes);
-    var data = {
-      username: "Username",
-      items: order.dishes,
-      ordertotal: order.total()
-    };
-
     $("#order_container").click(function(event) {
+      var data = {
+                  username: "Username",
+                  items: order.dishes,
+                  ordertotal: order.total().toFixed(2)
+                  };
       if (loggedIn()) {
         $.ajax({url: '/orders',
                type: 'post',
                dataType: 'json',
                success: function (data) {
-                 $('#order_container').html("Order successful");
+                 $('ul#listorder').html("Order successful");
                },
                data: data
         });
@@ -74,5 +72,6 @@ $( document ).ready(function() {
       $('#listmenu').append("<li><button id='" + dish + "'>+</button> " +
                             dish +": £" + menu[dish] + "</li> ");
     }
+    $('p#basket').text('No items in your basket');
   }
 });
