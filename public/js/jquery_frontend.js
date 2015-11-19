@@ -15,14 +15,14 @@ $( document ).ready(function() {
       makeMenu(dish);
       $('#listmenu').append("<li><button id='" +dish.name+ "'>+</button> " + dish.name +": £" + dish.price+"</li> ");
     });
-     test();
+     populateOrder();
   });
 
   var makeMenu = function(dish) {
     menu[dish.name]=dish.price;
   };
 
-  var test = function() {
+  var populateOrder = function() {
     $("#listmenu button").click(function(event) {
       order.add(this.id,1);
       $('#listorder').html(function() {
@@ -34,7 +34,6 @@ $( document ).ready(function() {
         string += "<button>Place Order</button>";
         return string;
       });
-      console.log(order.dishes);
       event.preventDefault();
     });
   };
