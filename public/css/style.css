@@ -43,7 +43,7 @@ body {
   float: left;
 
 }
-#order {
+#order_container {
   border-width: 2px;
   border-style: solid;
   border-color: burlywood;

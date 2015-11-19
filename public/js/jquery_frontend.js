@@ -17,6 +17,7 @@ $( document ).ready(function() {
     writeMenu(menu);
     addOrder();
     placeOrder();
+    console.log(order.dishes);
   });
 
   function addOrder() {
@@ -34,27 +35,28 @@ $( document ).ready(function() {
         string += "<li>" + name + " x" + qty + "</li>";
       });
       string += "</ul><p>TOTAL: " + order.total().toFixed(2);
-      string += "<button id='order'>Place Order</button>";
+      string += "<button>Place Order</button>";
       return string;
     });
   }
 
   function placeOrder() {
-    console.log(order);
+    console.log(order.dishes);
     var data = {
       username: "Username",
-      items: order.dishes
+      items: order.dishes,
+      ordertotal: order.total()
     };
-    $("#order").click(function(event) {
+
+    $("#order_container").click(function(event) {
       if (loggedIn()) {
         $.ajax({url: '/orders',
-                type: 'post',
-                dataType: 'json',
-                success: function (data) {
-                $('#order').html("Order successful");
-                },
-                data: data
-                // data: {"username":"Rajeev","items":{"pasta":[4,4.99],"curry":[3,5.99]}}
+               type: 'post',
+               dataType: 'json',
+               success: function (data) {
+                 $('#order_container').html("Order successful");
+               },
+               data: data
         });
       } else {
         alert("Please Log In");
@@ -70,7 +72,7 @@ $( document ).ready(function() {
     $('#menu').append('<ul id="listmenu"></ul>');
     for(var dish in menu ) {
       $('#listmenu').append("<li><button id='" + dish + "'>+</button> " +
-                             dish +": £" + menu[dish] + "</li> ");
+                            dish +": £" + menu[dish] + "</li> ");
     }
   }
 });
