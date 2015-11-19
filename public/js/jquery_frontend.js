@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
   var menu = {};
-  var order;
+  var order = new Order(menu);
 
     $( "#login" ).click(function( event ) {
 
@@ -15,7 +15,6 @@ $( document ).ready(function() {
       makeMenu(dish);
       $('#listmenu').append("<li><button id='" +dish.name+ "'>+</button> " + dish.name +": £" + dish.price+"</li> ");
     });
-     order = new Order(menu);
      test();
   });
 
@@ -25,13 +24,16 @@ $( document ).ready(function() {
 
   var test = function() {
     $("#listmenu button").click(function(event) {
-      $('#listorder').append("<li>" + this.id +"</li>");
       order.add(this.id,1);
+      $('#listorder').html(function() {
+        var string = '';
+        Object.keys(order.dishes).forEach(function(dish) {
+          string += "<li>" + dish + " x" + order.dishes[dish] + "</li>";
+        });
+        return string;
+      });
       console.log(order.dishes);
-      console.log(order.total());
       event.preventDefault();
-      console.log((this.id));
-      console.log(menu);
     });
   };
 
