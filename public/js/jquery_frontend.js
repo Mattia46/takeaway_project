@@ -47,7 +47,6 @@ $( document ).ready(function() {
                   items: order.dishes,
                   ordertotal: order.total().toFixed(2)
                   };
-
       if (loggedIn()) {
         $.ajax({url: '/orders',
                type: 'post',
