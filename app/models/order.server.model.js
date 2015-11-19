@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
 var OrderSchema = new Schema ({
   username: {type: String, required: true },
   items: {},
+  ordertotal: Number,
   created_at: {type: Date, default: Date.now}
 });
 
