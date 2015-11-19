@@ -1,6 +1,8 @@
 var config = require('./config'),
     express = require('express'),
-    bodyParser = require('body-parser');
+    passport = require('passport'),
+    bodyParser = require('body-parser'),
+    flash = require('connect-flash');
 
 module.exports = function() {
     var app = express();
@@ -10,6 +12,9 @@ module.exports = function() {
     }));
 
     app.use(bodyParser.json());
+    app.use(passport.initialize());
+    app.use(passport.session());
+    app.use(flash());
 
     app.set('views', './app/views');
     app.set('view engine', 'ejs');
