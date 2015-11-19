@@ -8,9 +8,9 @@ Order.prototype.add = function(dish, qty) {
 
   if (this.isInMenu(dish)) {
       if (order[dish]) {
-        order[dish] += qty;
+        order[dish][0]++;
       } else {
-        order[dish] = qty;
+        order[dish] = [qty, this.menu[dish]];
       }
   } else {
       throw new Error('Invalid dish');
@@ -23,8 +23,8 @@ Order.prototype.total = function() {
   var menu = this.menu;
 
 
-  Object.keys(order).forEach( function(key) {
-    total += menu[key] * order[key];
+  Object.keys(order).forEach( function(name) {
+    total += order[name][0] * order[name][1];
   });
 
   return total;
