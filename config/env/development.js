@@ -5,12 +5,12 @@ module.exports = {
     db: 'mongodb://localhost/todos',
     facebook: {
         clientID: '182446122099481',
-        clientSecret: '['FACEBOOK_KEY'],
+        clientSecret: 'ENV["FACEBOOK_KEY"]',
         callbackURL: 'http://localhost:'+ port +'/oauth/facebook/callback'
     },
    twitter: {
       clientID: 'dvX7ucVNuasExyWYWuiBinUBo',
-      clientSecret: '['TWITTER_KEY'],
+      clientSecret: 'ENV["TWITTER_KEY"]',
       callbackURL: 'http://localhost:1337/oauth/twitter/callback'
     }
   };
