@@ -24,7 +24,7 @@ describe ('TakeAway features', function(){
   // I want to place an order
   it('can place an order', function(){
     takeaway.placeOrder('pasta', 7);
-    expect(takeaway.order.dishes).toEqual({'pasta': 7});
+    expect(takeaway.order.dishes).toEqual({'pasta':[ 7, 4.99]});
   });
   it('check total cost of order', function() {
     takeaway.placeOrder('pasta', 7);

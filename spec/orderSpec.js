@@ -14,13 +14,13 @@ describe('Order', function() {
   describe('#add', function() {
     it('adds dish and quantity to the order', function() {
       order.add('pasta', 3);
-      expect(order.dishes.pasta).toEqual(3);
+      expect(order.dishes.pasta).toEqual([3, 4.99]);
     });
 
     it('adds multiple orders of the same dish', function() {
       order.add('curry', 3);
       order.add('curry', 4);
-      expect(order.dishes.curry).toEqual(7);
+      expect(order.dishes.curry).toEqual([4, 5.99]);
     });
 
     it('does not allow you to add dishes that are not on the menu', function() {

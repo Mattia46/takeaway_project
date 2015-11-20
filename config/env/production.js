@@ -1,4 +1,4 @@
-var port = process.env.PORT;
+uar port = process.env.PORT;
 
 module.exports = {
     port: port,
