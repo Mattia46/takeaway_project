@@ -14,7 +14,7 @@ describe ('TakeAway', function(){
     order = { add: function() {}, total: function() {}};
     spyOn(order, 'add');
     spyOn(order, 'total');
-    takeaway = new TakeAway(menu,order);
+    takeaway = new TakeAway(menu, order);
   });
 
 

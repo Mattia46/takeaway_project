@@ -20,3 +20,18 @@ So that I am reassured that my order will be delivered on time
 I would like to receive a text such as "Thank you! Your order was placed and
 will be delivered before 18:52" after I have ordered
 ```
+
+If you haven't got GRUNT on your system, run:
+```
+$ npm install -g grunt-cli
+```
+
+To run the test:
+
+```
+$ git clone https://github.com/Mattia46/takeaway_project
+$ npm install
+```
+```
+$ grunt
+```
